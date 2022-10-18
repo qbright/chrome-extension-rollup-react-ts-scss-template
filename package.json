@@ -1,0 +1,57 @@
+{
+  "name": "chrome-bookmarks-cleaner-extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "csstype": "^3.1.1",
+    "js-tokens": "^4.0.0",
+    "loose-envify": "^1.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^23.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-replace": "^5.0.0",
+    "@rollup/plugin-typescript": "^9.0.1",
+    "@types/chrome": "^0.0.198",
+    "@types/node": "^18.11.0",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "autoprefixer": "^10.4.12",
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.18",
+    "rimraf": "^3.0.2",
+    "rollup": "^3.2.2",
+    "rollup-plugin-progress": "^1.1.2",
+    "rollup-plugin-scss": "^3.0.0",
+    "sass": "^1.55.0"
+  },
+  "peerDependencies": {
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:main": "npx rollup -w -c --bundleConfigAsCjs ",
+    "watch:bg": "npx rollup -w --config rollup-background.config.js --bundleConfigAsCjs",
+    "watch": "cross-env NODE_ENV=development run-p watch:*",
+    "build:main": "npx rollup -c --bundleConfigAsCjs ",
+    "build:bg": "npx rollup --config rollup-background.config.js --bundleConfigAsCjs",
+    "rmiraf": "npx rimraf ./dist",
+    "build": "npm run rmiraf && cross-env NODE_ENV=production run-p build:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qbright/chrome-bookmarks-cleaner-extension.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qbright/chrome-bookmarks-cleaner-extension/issues"
+  },
+  "homepage": "https://github.com/qbright/chrome-bookmarks-cleaner-extension#readme"
+}
